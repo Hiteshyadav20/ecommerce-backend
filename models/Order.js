@@ -1,14 +1,9 @@
-import mongoose from "mongoose";
 
-const OrderSchema = new mongoose.Schema({
-  userId: String,
-  items: Array,
-  amount: Number,
-  paymentStatus: String,
-  orderStatus: {
-    type: String,
-    default: "Placed" // Placed → Packed → Shipped → Delivered
-  }
+import mongoose from 'mongoose';
+const orderSchema=new mongoose.Schema({
+  userId:String,
+  items:Array,
+  total:Number,
+  status:{type:String, default:"Placed"}
 });
-
-export default mongoose.model("Order", OrderSchema);
+export default mongoose.model("Order",orderSchema);
